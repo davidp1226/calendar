@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <!-- Calendario -->
+        <div class="calendar-header">
+            <button class="buttonheader" id="prev">◀</button>
+            <h2 id="monthYear"></h2>
+            <button class="buttonheader" id="next">▶</button>
+        </div>
+        <div class="calendar-days">
+            <div>Dom</div>
+            <div>Lun</div>
+            <div>Mar</div>
+            <div>Mier</div>
+            <div>Jue</div>
+            <div>Vie</div>
+            <div>Sab</div>
+        </div>
+        <div id="calendar-grid" class="calendar-grid"></div>
+    </div>
+
+    <!-- Panel de eventos -->
+    <div class="events-container">
+        <h3>Eventos</h3>
+        <ul id="eventsList"></ul>
+    </div>
+
+    <!-- Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Agrega un Evento</h3>
+            <input type="text" id="eventText" placeholder="Nombre del Evento">
+            <button id="saveEvent">Guardar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

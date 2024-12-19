@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-start;
+    background-color: #f8f9fa;
+    height: 100vh;
+}
+
+.calendar-container {
+    margin-top: 20px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    height: auto;
+    text-align: center;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding: 30px;
+    background-color: #adb5bd;
+    border-radius: 20px;
+}
+
+.buttonheader {
+    background-color: #6c757d;
+    border: 0;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.buttonheader:hover {
+    background-color: #495057;
+    transform: scale(1.05);
+}
+
+.calendar-days, .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 10px;
+    background-color: #adb5bd;
+    border-radius: 20px;
+}
+
+.calendar-days div {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.calendar-grid div {
+    border-radius: 10px;
+    padding: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transition: transform 0.3s ease;
+}
+
+.calendar-grid div:hover {
+    background-color: #6c757d;
+    transform: scale(1.05);
+}
+
+.calendar-grid .event {
+    background-color: #495057;
+    border-radius: 10px;
+}
+
+.events-container {
+    margin-top: 20px;
+    width: 250px;
+    background-color: #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.events-container h3 {
+    margin: 0 0 10px;
+    text-align: center;
+    background-color: #ced4da;
+    border-radius: 7px;
+}
+
+.events-container ul {
+    list-style: none;
+    padding: 0;
+    background-color: #e9ecef;
+    border-radius: 7px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.events-container ul li {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(108, 117, 125, 0.37);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    border: 2px solid #ced4da;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.custom-btn {
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-btn.edit-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.custom-btn.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+/* Estilos base (los que ya tenías) se mantienen igual hasta... */
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .calendar-container {
+        width: 90%;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .events-container {
+        width: 90%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .calendar-container {
+        padding: 10px;
+    }
+
+    .calendar-header {
+        padding: 15px;
+    }
+
+    .calendar-grid div {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .calendar-grid div {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .buttonheader {
+        width: 25px;
+        height: 25px;
+    }
+
+    .calendar-days div {
+        font-size: 12px;
+    }
+
+    .custom-btn {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media screen and (max-width: 320px) {
+    .calendar-grid div {
+        padding: 5px;
+        font-size: 11px;
+    }
+
+    .calendar-header {
+        padding: 10px;
+    }
+
+    .events-container h3 {
+        font-size: 16px;
+    }
+
+    .events-container ul li {
+        font-size: 12px;
+        padding: 3px;
+    }
+}
