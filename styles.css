@@ -157,7 +157,6 @@ body {
     background-color: #dc3545;
     color: white;
 }
-/* Estilos base (los que ya tenías) se mantienen igual hasta... */
 
 /* Media Queries */
 @media screen and (max-width: 1200px) {
